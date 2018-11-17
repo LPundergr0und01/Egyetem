@@ -1,0 +1,12 @@
+f = @(x)(1./(1+x.^2));
+a = -5;
+b = 5;
+X = linspace(a,b,35);
+fx = f(X);
+Y = linspace(a,b,100);
+lmf = Lmf(X,fx,Y);
+hold on;
+fx = f(Y);
+plot(Y,lmf);
+plot(Y,fx);
+axis([a,b,a,b]);
