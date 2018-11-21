@@ -1,5 +1,7 @@
 function X = NewNewton( par,e,n )
     X=zeros(1,n)+1;
+    par(1) =par(1)/2;
+    par(2) =par(2);
     F=@(x)ContinuousCDF(x,'gamma',par);
     f=@(x)ContinuousPDF(x,'gamma',par);
     for i=1:n
@@ -12,6 +14,6 @@ function X = NewNewton( par,e,n )
         end
         X(i) = x;
     end
-    hist(X);
+    %hist(X);
 end
 
