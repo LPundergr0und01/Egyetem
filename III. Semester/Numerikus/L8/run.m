@@ -1,0 +1,17 @@
+f = @(x)(1./(1+x.^2));
+fd = @(x)((-2.*x)./((1+x.^2).^2));
+a = -5;
+b = 5;
+X = linspace(a,b,50);
+fx = f(X);
+fdx = fd(X);
+fx = fx';
+X = X';
+fdx = fdx';
+Y = linspace(a,b,100);
+HIP2 = HIP(X,fx,fdx,Y);
+hold on;
+fx = f(Y);
+plot(Y,HIP2);
+plot(Y,fx);
+axis([a,b,a,b]);
